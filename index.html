@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remaja Rahmatan Lil 'Alamin: Menjauhi Penyakit Sosial</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .arabic {
+            font-family: 'Traditional Arabic', 'Amiri', 'Meiryo', serif;
+            direction: rtl;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header / Navbar -->
+    <header class="bg-emerald-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-600 p-2 rounded-lg">
+                    <i class="fa-solid fa-mosque text-2xl text-emerald-100"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">PAI & Budi Pekerti — Kelas XI</h1>
+                    <p class="text-xs text-emerald-200">SMAN 1 Depok, Sleman | Bab 3: Menjauhi Penyakit Sosial</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-1 text-sm font-medium">
+                <button onclick="switchTab('materi')" id="nav-materi" class="nav-btn px-4 py-2 rounded-md bg-emerald-700 text-white transition">
+                    <i class="fa-solid fa-book-open mr-2"></i>Materi Ahli
+                </button>
+                <button onclick="switchTab('studi-kasus')" id="nav-studi-kasus" class="nav-btn px-4 py-2 rounded-md hover:bg-emerald-700/50 text-emerald-100 transition">
+                    <i class="fa-solid fa-brain mr-2"></i>Studi Kasus
+                </button>
+                <button onclick="switchTab('kampanye')" id="nav-kampanye" class="nav-btn px-4 py-2 rounded-md hover:bg-emerald-700/50 text-emerald-100 transition">
+                    <i class="fa-solid fa-bullhorn mr-2"></i>Studio Kampanye
+                </button>
+                <button onclick="switchTab('kuis')" id="nav-kuis" class="nav-btn px-4 py-2 rounded-md hover:bg-emerald-700/50 text-emerald-100 transition">
+                    <i class="fa-solid fa-circle-check mr-2"></i>Kuis Evaluasi
+                </button>
+            </nav>
+        </div>
+        <!-- Mobile Nav Bar -->
+        <div class="md:hidden flex justify-around bg-emerald-900 py-2 border-t border-emerald-700 text-xs text-emerald-200">
+            <button onclick="switchTab('materi')" class="mobile-nav-btn text-white flex flex-col items-center">
+                <i class="fa-solid fa-book-open text-base mb-1"></i>Materi
+            </button>
+            <button onclick="switchTab('studi-kasus')" class="mobile-nav-btn flex flex-col items-center">
+                <i class="fa-solid fa-brain text-base mb-1"></i>Kasus
+            </button>
+            <button onclick="switchTab('kampanye')" class="mobile-nav-btn flex flex-col items-center">
+                <i class="fa-solid fa-bullhorn text-base mb-1"></i>Kampanye
+            </button>
+            <button onclick="switchTab('kuis')" class="mobile-nav-btn flex flex-col items-center">
+                <i class="fa-solid fa-circle-check text-base mb-1"></i>Kuis
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero / Banner -->
+    <section class="bg-gradient-to-r from-emerald-700 to-teal-800 text-white py-8 px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-3 max-w-2xl">
+                <span class="inline-block bg-emerald-900/60 text-emerald-200 text-xs font-semibold px-3 py-1 rounded-full border border-emerald-500/30">
+                    <i class="fa-solid fa-star text-amber-400 mr-1"></i> Tema: Remaja Rahmatan lil 'Alamin
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">
+                    Merawat Menara Kedamaian, Menjauhi Penyakit Sosial
+                </h2>
+                <p class="text-emerald-100 text-sm leading-relaxed">
+                    Modul pembelajaran interaktif berbasis <i>Deep Learning</i> (Mindful, Meaningful, & Joyful Learning) untuk menganalisis bahaya Bullying, Perkelahian, Minuman Keras, dan Narkoba dalam perspektif Islam.
+                </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 w-full md:w-80 text-xs space-y-2">
+                <div class="flex items-center text-emerald-200 font-semibold mb-1">
+                    <i class="fa-solid fa-bullseye mr-2 text-amber-400"></i> Target Capaian Pembelajaran:
+                </div>
+                <ul class="space-y-1.5 text-emerald-100 list-disc list-inside">
+                    <li>Memahami Dalil Al-Qur'an & Hadis</li>
+                    <li>Merumuskan 4 Manfaat Konkret</li>
+                    <li>Mendesain Media Kampanye Preventif</li>
+                    <li>Menumbuhkan <i>Mujahadah An-Nafs</i></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- TAB 1: MATERI AHLI -->
+        <section id="tab-materi" class="tab-content space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <div>
+                    <h3 class="font-bold text-slate-800 text-lg">Kelompok Eksplorasi Ahli</h3>
+                    <p class="text-xs text-slate-500">Pilih topik penyakit sosial di bawah ini untuk mempelajari dalil, dampak, serta manfaat pencegahannya.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="selectTopic('bullying')" id="btn-bullying" class="topic-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white shadow-sm transition">
+                        1. Bullying
+                    </button>
+                    <button onclick="selectTopic('perkelahian')" id="btn-perkelahian" class="topic-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+                        2. Perkelahian
+                    </button>
+                    <button onclick="selectTopic('khamr')" id="btn-khamr" class="topic-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+                        3. Minuman Keras
+                    </button>
+                    <button onclick="selectTopic('narkoba')" id="btn-narkoba" class="topic-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+                        4. Narkoba/NAPZA
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dynamic Topic Detail -->
+            <div id="topic-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Content inserted via JS -->
+            </div>
+        </section>
+
+        <!-- TAB 2: STUDI KASUS & REFLEKSI -->
+        <section id="tab-studi-kasus" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="border-b border-slate-100 pb-4 mb-6">
+                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-users-viewfinder text-emerald-600"></i>
+                        Studi Kasus & Analisis Diri (Mujahadah An-Nafs)
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-1">
+                        Bacalah skenario berikut dan pilih respon terbaik sesuai prinsip keberanian moral (Syaja'ah) dan kontrol diri islami.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Case 1 -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                        <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-md">Kasus 1: Perundungan di Media Sosial</span>
+                        <h4 class="font-bold text-slate-800">Dilema Grup WhatsApp Kelas</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Di grup percakapan tanpa guru, beberapa teman membuat meme bernada mengejek kekurangan fisik seorang siswa pemalu. Teman-teman lain tertawa dan meramaikan ejekan tersebut. Bagaimana tindakan Anda sesuai QS. Al-Hujurat: 11?
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <button onclick="checkCaseResponse(1, 'A', false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                A. Diam saja agar tidak menjadi sasaran ejekan berikutnya.
+                            </button>
+                            <button onclick="checkCaseResponse(1, 'B', true)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                B. Menegur secara santun di grup/Japri agar menghentikan ejekan dan mengingatkan larangan mengolok-olok.
+                            </button>
+                            <button onclick="checkCaseResponse(1, 'C', false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                C. Membalas mengejek anggota grup yang membuat meme agar berimbang.
+                            </button>
+                        </div>
+                        <div id="case-feedback-1" class="hidden p-3 rounded-lg text-sm mt-2"></div>
+                    </div>
+
+                    <!-- Case 2 -->
+                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                        <span class="bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded-md">Kasus 2: Tekanan Teman Sebaya (Peer Pressure)</span>
+                        <h4 class="font-bold text-slate-800">Ajakan Berkumpul Setelah Jam Sekolah</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Anda diajak nongkrong oleh senior. Di lokasi, Anda melihat mereka membawa minuman keras dan mengintimidasi Anda agar mencoba sedikit untuk membuktikan "kesetiakawanan". Tindakan kontrol diri (mujahadah an-nafs) yang tepat adalah:
+                        </p>
+                        <div class="space-y-2 pt-2">
+                            <button onclick="checkCaseResponse(2, 'A', false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                A. Mencoba sedikit saja agar tidak dimusuhi oleh senior.
+                            </button>
+                            <button onclick="checkCaseResponse(2, 'B', true)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                B. Menolak dengan tegas dan sopan, lalu segera meninggalkan lokasi serta melapor ke guru BK/orang tua.
+                            </button>
+                            <button onclick="checkCaseResponse(2, 'C', false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white text-sm hover:border-emerald-500 hover:bg-emerald-50/50 transition">
+                                C. Pura-pura meminumnya lalu membuangnya secara diam-diam.
+                            </button>
+                        </div>
+                        <div id="case-feedback-2" class="hidden p-3 rounded-lg text-sm mt-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: STUDIO KAMPANYE DIGITAL -->
+        <section id="tab-kampanye" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="border-b border-slate-100 pb-4 mb-6">
+                    <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-pen-nib text-emerald-600"></i>
+                        Simulasi Perancang Kampanye Digital Preventif (TP 3)
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-1">
+                        Rancang draft poster/infografis anti-penyakit sosial yang memadukan landasan dalil, manfaat pencegahan, dan kalimat ajakan positif.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Form Input -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Fokus Kampanye</label>
+                            <select id="camp-topic" onchange="updatePosterPreview()" class="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500">
+                                <option value="Stop Bullying">Stop Bullying / Perundungan</option>
+                                <option value="Cegah Tawuran">Cegah Perkelahian & Tawuran</option>
+                                <option value="Jauhi Khamr">Bebas Minuman Keras (Khamr)</option>
+                                <option value="Katakan Tidak pada Narkoba">Say No to Narkoba / NAPZA</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Judul / Headline Poster</label>
+                            <input type="text" id="camp-title" oninput="updatePosterPreview()" value="Lindungi Diri, Rawat Kedamaian Sekolah" class="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500" placeholder="Ketik judul menarik...">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Landasan Dalil Al-Qur'an / Hadis</label>
+                            <select id="camp-dalil" onchange="updatePosterPreview()" class="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500">
+                                <option value="QS. Al-Hujurat [49]: 11 — Larangan mengolok-olok antar sesama">QS. Al-Hujurat [49]: 11 (Menjaga Kehormatan Sesama)</option>
+                                <option value="QS. Al-Ma'idah [5]: 90 — Khamr & judi adalah perbuatan keji setan">QS. Al-Ma'idah [5]: 90 (Larangan Khamr & NAPZA)</option>
+                                <option value="QS. Al-Ma'idah [5]: 91 — Khamr menimbulkan permusuhan & kebencian">QS. Al-Ma'idah [5]: 91 (Menjaga Ukhuwah & Kedamaian)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Poin Manfaat Konkret (Pilih/Ketik)</label>
+                            <textarea id="camp-benefits" oninput="updatePosterPreview()" rows="3" class="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500" placeholder="Tuliskan manfaat pencegahan...">- Menjaga kesehatan fisik dan mental
+- Mewujudkan lingkungan belajar yang aman & ramah
+- Mendapat ridha Allah SWT dan menjaga nama baik keluarga</textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Pesan Ajakan (Call to Action)</label>
+                            <input type="text" id="camp-cta" oninput="updatePosterPreview()" value="Jadilah Generasi Rahmatan lil 'Alamin Sekarang!" class="w-full p-2.5 rounded-lg border border-slate-300 text-sm focus:ring-2 focus:ring-emerald-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Tema Warna Poster</label>
+                            <div class="flex gap-3">
+                                <button onclick="setPosterTheme('emerald')" class="w-8 h-8 rounded-full bg-emerald-600 border-2 border-slate-300"></button>
+                                <button onclick="setPosterTheme('teal')" class="w-8 h-8 rounded-full bg-teal-700 border-2 border-slate-300"></button>
+                                <button onclick="setPosterTheme('indigo')" class="w-8 h-8 rounded-full bg-indigo-700 border-2 border-slate-300"></button>
+                                <button onclick="setPosterTheme('rose')" class="w-8 h-8 rounded-full bg-rose-700 border-2 border-slate-300"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview Card -->
+                    <div class="flex flex-col items-center justify-center">
+                        <div class="text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wider">Pratinjau Poster Kampanye Digital</div>
+                        <div id="poster-card" class="w-full max-w-sm bg-gradient-to-br from-emerald-800 to-teal-900 text-white p-6 rounded-2xl shadow-xl space-y-4 border border-white/20 transition-all duration-300">
+                            <div class="flex justify-between items-center border-b border-white/20 pb-3">
+                                <span class="bg-amber-400 text-amber-950 font-extrabold text-[10px] uppercase px-2.5 py-0.5 rounded-full" id="prev-topic">STOP BULLYING</span>
+                                <span class="text-[10px] text-emerald-200">SMAN 1 DEPOK</span>
+                            </div>
+
+                            <h3 id="prev-title" class="text-xl font-extrabold leading-snug tracking-tight">
+                                Lindungi Diri, Rawat Kedamaian Sekolah
+                            </h3>
+
+                            <div class="bg-black/20 p-3 rounded-lg border border-white/10 space-y-1">
+                                <div class="text-[10px] text-amber-300 font-bold uppercase"><i class="fa-solid fa-book-quran mr-1"></i> Landasan Syar'i</div>
+                                <p id="prev-dalil" class="text-xs text-emerald-100 italic">QS. Al-Hujurat [49]: 11 — Larangan mengolok-olok antar sesama</p>
+                            </div>
+
+                            <div class="space-y-1">
+                                <div class="text-[10px] text-amber-300 font-bold uppercase"><i class="fa-solid fa-shield-halved mr-1"></i> Manfaat Bebas Penyakit Sosial</div>
+                                <div id="prev-benefits" class="text-xs text-slate-100 whitespace-pre-line leading-relaxed">
+                                    - Menjaga kesehatan fisik dan mental
+                                    - Mewujudkan lingkungan belajar aman
+                                </div>
+                            </div>
+
+                            <div class="pt-2 text-center">
+                                <div id="prev-cta" class="bg-amber-400 text-emerald-950 font-bold text-xs py-2 px-4 rounded-lg shadow">
+                                    Jadilah Generasi Rahmatan lil 'Alamin Sekarang!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: KUIS EVALUASI -->
+        <section id="tab-kuis" class="tab-content hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <div class="flex justify-between items-center border-b border-slate-100 pb-4 mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800">Evaluasi Pemahaman (Asesmen Sumatif)</h3>
+                        <p class="text-sm text-slate-500">Uji pemahaman Anda terhadap analisis dalil, dampak hukum, dan manfaat pencegahan.</p>
+                    </div>
+                    <div id="quiz-score-badge" class="hidden bg-emerald-100 text-emerald-800 px-4 py-1.5 rounded-full font-bold text-sm">
+                        Skor: <span id="quiz-score">0</span>/100
+                    </div>
+                </div>
+
+                <div id="quiz-body" class="space-y-6">
+                    <!-- Quiz questions generated via JS -->
+                </div>
+
+                <div class="mt-8 flex justify-end">
+                    <button id="btn-submit-quiz" onclick="submitQuiz()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg shadow transition">
+                        Kirim Jawaban Evaluasi
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-6 border-t border-slate-700 mt-auto text-xs">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
+            <p>Modul Ajar PAI & Budi Pekerti — SMA Negeri 1 Depok, Sleman, D.I. Yogyakarta</p>
+            <p class="text-slate-500">Penyusun: Alwi Mushthofa, S.Pd.I., M.Pd. | Sesuai Kurikulum Merdeka & Profil Pelajar Pancasila</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        // Data Topic Modules
+        const topicData = {
+            bullying: {
+                title: "Bullying (Perundungan)",
+                icon: "fa-hand-paper",
+                badge: "Perilaku Sosial Negatif",
+                dalilHeader: "QS. Al-Hujurat [49]: 11",
+                dalilArabic: "يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا يَسْخَرْ قَوْمٌ مِّن قَوْمٍ عَسَىٰٓ أَن يَكُونُوا۟ خَيْرًا مِّنْهُمْ",
+                dalilTranslation: "\"Wahai orang-orang yang beriman! Janganlah suatu kaum mengolok-olok kaum yang lain, boleh jadi mereka (yang diperolok-olokkan) lebih baik dari mereka...\"",
+                dampak: [
+                    "<b>Psikologis:</b> Trauma mendalam, depresi, krisis kepercayaan diri, hingga risiko kelainan kecemasan.",
+                    "<b>Akademik:</b> Penurunan motivasi belajar, penurunan prestasi, hingga putus sekolah.",
+                    "<b>Sosial & Agama:</b> Merusak tali ukhuwah islamiyah dan melanggar hak asasi kedamaian orang lain."
+                ],
+                manfaat: {
+                    pribadi: "Memiliki kedamaian pikiran dan emosi yang stabil (jiwa tenang).",
+                    keluarga: "Menciptakan kebanggaan dan ketenangan bagi orang tua.",
+                    sekolah: "Terciptanya iklim sekolah yang aman, inklusif, dan zero-bullying zone.",
+                    masyarakat: "Terbangunnya budaya saling menghargai dan berkeadaban (Ta'addub)."
+                }
+            },
+            perkelahian: {
+                title: "Perkelahian Antarpelajar / Tawuran",
+                icon: "fa-people-robbing",
+                badge: "Anak & Kekerasan",
+                dalilHeader: "QS. Al-Hujurat [49]: 10 & Hadis Nabi",
+                dalilArabic: "إِنَّمَا ٱلْمُؤْمِنُونَ إِخْوَةٌ فَأَصْلِحُوا۟ بَيْنَ أَخَوَيRelevant",
+                dalilTranslation: "\"Sesungguhnya orang-orang mu'min itu bersaudara, karena itu damaikanlah antara kedua saudaramu yang berselisih...\" & Rasulullah SAW bersabda: \"Orang muslim adalah saudara bagi muslim lainnya, tidak boleh menzaliminya.\"",
+                dampak: [
+                    "<b>Fisik & Hukum:</b> Luka permanen, cacat fisik, kematian, serta konsekuensi pidana hukum anak.",
+                    "<b>Fasilitas:</b> Kerusakan fasilitas umum dan sarana belajar sekolah.",
+                    "<b>Sosial:</b> Menimbulkan dendam berantai antarsekolah dan merusak cita-cita masa depan."
+                ],
+                manfaat: {
+                    pribadi: "Terhindar dari bahaya fisik dan catatan kriminal (rekam jejak bersih).",
+                    keluarga: "Menjaga nama baik keluarga dari stigma negatif.",
+                    sekolah: "Menjaga reputasi sekolah sebagai menara ilmu dan kedamaian.",
+                    masyarakat: "Terciptanya ketertiban umum dan rasa aman bagi warga sekitar."
+                }
+            },
+            khamr: {
+                title: "Minuman Keras (Khamr)",
+                icon: "fa-wine-bottle",
+                badge: "Zat Terlarang",
+                dalilHeader: "QS. Al-Ma'idah [5]: 90-91",
+                dalilArabic: "إِنَّمَا ٱلْخَمْرُ وَٱلْمَيْسِرُ وَٱلْأَنصَابُ وَٱلْأَزْلَٰمُ رِجْسٌ مِّنْ عَمَلِ ٱلشَّيْطَٰنِ فَٱجْتَنِبُوهُ",
+                dalilTranslation: "\"Sesungguhnya (minuman) keras, berjudi, (berkorban untuk) berhala, mengundi nasib dengan panah, adalah termasuk perbuatan keji yang termasuk perbuatan setan. Maka jauhilah perbuatan-perbuatan itu agar kamu mendapat keberuntungan.\"",
+                dampak: [
+                    "<b>Kesehatan Organ:</b> Kerusakan sistem syaraf pusat, organ hati (sirosis), dan jantung.",
+                    "<b>Akal & Kesadaran:</b> Hilangnya fungsi akal sehat yang memicu kejahatan sekunder (pemerkosaan, pembunuhan).",
+                    "<b>Agama:</b> Terhalangnya doa dan ibadah shalat selama tidak bertaubat."
+                ],
+                manfaat: {
+                    pribadi: "Menjaga kesucian akal (Hifzh al-'Aql) dan kesehatan organ tubuh.",
+                    keluarga: "Terhindar dari kebangkrutan ekonomi dan kekerasan dalam rumah tangga.",
+                    sekolah: "Mencegah terjadinya gangguan ketertiban belajar siswa.",
+                    masyarakat: "Menurunkan angka kriminalitas dan kecelakaan lalu lintas."
+                }
+            },
+            narkoba: {
+                title: "Narkoba & NAPZA",
+                icon: "fa-capsules",
+                badge: "Bahaya Nasional",
+                dalilHeader: "QS. Al-A'raf [7]: 157 & Prinsip Fiqh",
+                dalilArabic: "وَيُحِلُّ لَهُمُ ٱلطَّيِّبَٰتِ وَيُحَرِّمُ عَلَيْهِمُ ٱلْخَبَٰٓئِثَ",
+                dalilTranslation: "\"...Dan (Allah) menghalalkan bagi mereka segala yang baik dan mengharamkan bagi mereka segala yang buruk...\" Kaidah Fiqh: \"La dharara wa la dhirar\" (Tidak boleh membahayakan diri sendiri dan orang lain).",
+                dampak: [
+                    "<b>Saraf & Biologi:</b> Ketergantungan berat (adiksi), kerusakan sel otak permanen, OD (Overdosis).",
+                    "<b>Masa Depan:</b> Kehilangan fokus hidup, kehancuran karier, dan masa depan suram.",
+                    "<b>Hukum:</b> Sanksi berat undang-undang narkotika (penjara hingga hukuman mati)."
+                ],
+                manfaat: {
+                    pribadi: "Memiliki potensi diri optimal dan tubuh yang bertenaga untuk berprestasi.",
+                    keluarga: "Keharmonisan keluarga tetap terjaga tanpa krisis finansial/hukum.",
+                    sekolah: "Terwujudnya lingkungan sekolah bersih dari peredaran gelap narkoba.",
+                    masyarakat: "Menyelamatkan generasi penerus bangsa dari kehancuran moral."
+                }
+            }
+        };
+
+        // Quiz Data
+        const quizQuestions = [
+            {
+                q: "1. Landasan Al-Qur'an utama yang melarang keras tindakan mengolok-olok, memanggil dengan julukan buruk, dan merendahkan sesama (bullying) adalah...",
+                options: ["QS. Al-Hujurat: 11", "QS. Al-Ma'idah: 90", "QS. Al-Baqarah: 183", "QS. Ali 'Imran: 104"],
+                correct: 0,
+                explain: "QS. Al-Hujurat ayat 11 secara eksplisit melarang sikap mengejek dan mengolok-olok karena bisa jadi yang diolok-olok lebih baik di sisi Allah."
+            },
+            {
+                q: "2. Dalam QS. Al-Ma'idah ayat 90, meminum khamr (minuman keras) dikategorikan sebagai perbuatan 'Rijs' yang artinya...",
+                options: ["Perbuatan mulia", "Perbuatan keji dan kotor dari setan", "Perbuatan biasa yang dimaafkan", "Sikap wajar anak muda"],
+                correct: 1,
+                explain: "Kata 'Rijs' dalam surah Al-Ma'idah: 90 bermakna perbuatan keji, kotor, dan merupakan tipu daya setan."
+            },
+            {
+                q: "3. Salah satu manfaat konkret dari menghindari narkoba dan minuman keras bagi kesehatan akal (Hifzh al-'Aql) adalah...",
+                options: ["Membuat tubuh menjadi kebal penyakit tanpa olahraga", "Menjaga kesadaran penuh sehingga mampu berpikir kritis dan berakhlak", "Meningkatkan daya tahan tubuh secara drastis", "Menjadikan seseorang tidak pernah merasa lelah"],
+                correct: 1,
+                explain: "Menjaga akal (Hifzh al-'Aql) memastikan kesadaran diri tetap jernih untuk mengambil keputusan yang benar dan berakhlak mulia."
+            },
+            {
+                q: "4. Sikap kontrol diri dalam Islam untuk menahan hawa nafsu dari ajakan negatif teman sebaya disebut...",
+                options: ["Toleransi", "Mujahadah An-Nafs", "Takaful", "Tabligh"],
+                correct: 1,
+                explain: "Mujahadah An-Nafs adalah kesungguhan dalam mengontrol dan mengendalikan hawa nafsu dari perbuatan maksiat/buruk."
+            },
+            {
+                q: "5. Apa dampak jangka panjang bagi lingkungan sekolah jika terjadi perkelahian antarpelajar (tawuran)?",
+                options: ["Meningkatkan popularitas sekolah di media sosial", "Merusak reputasi sekolah dan menciptakan rasa tidak aman dalam belajar", "Membuat siswa semakin kompak dalam segala hal", "Menghilangkan peraturan sekolah"],
+                correct: 1,
+                explain: "Tawuran merusak iklim kondusif sekolah, mencoreng nama baik lembaga, dan memicu rasa takut di antara peserta didik."
+            }
+        ];
+
+        // Functions
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`tab-${tabId}`).classList.remove('hidden');
+
+            // Update Nav Styles
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-700', 'text-white');
+                btn.classList.add('text-emerald-100', 'hover:bg-emerald-700/50');
+            });
+            const activeBtn = document.getElementById(`nav-${tabId}`);
+            if(activeBtn) {
+                activeBtn.classList.add('bg-emerald-700', 'text-white');
+                activeBtn.classList.remove('hover:bg-emerald-700/50');
+            }
+        }
+
+        function selectTopic(topicKey) {
+            const data = topicData[topicKey];
+            
+            // Highlight Button
+            document.querySelectorAll('.topic-btn').forEach(btn => {
+                btn.classList.remove('bg-emerald-600', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            document.getElementById(`btn-${topicKey}`).classList.add('bg-emerald-600', 'text-white');
+            document.getElementById(`btn-${topicKey}`).classList.remove('bg-slate-100', 'text-slate-600');
+
+            // Render Detail HTML
+            const container = document.getElementById('topic-container');
+            container.innerHTML = `
+                <!-- Left: Overview & Dalil -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+                                <i class="fa-solid ${data.icon} text-emerald-600"></i>
+                                ${data.title}
+                            </h3>
+                            <span class="bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-1 rounded-full">${data.badge}</span>
+                        </div>
+
+                        <!-- Dalil Box -->
+                        <div class="bg-emerald-50/70 p-5 rounded-xl border border-emerald-200/80 space-y-3">
+                            <div class="flex justify-between items-center text-xs font-bold text-emerald-800">
+                                <span><i class="fa-solid fa-book-quran mr-1"></i> ${data.dalilHeader}</span>
+                                <span class="bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded text-[10px]">Landasan Syar'i</span>
+                            </div>
+                            <p class="arabic text-right text-xl leading-loose text-slate-800 font-semibold">${data.dalilArabic}</p>
+                            <p class="text-xs text-slate-600 italic leading-relaxed">${data.dalilTranslation}</p>
+                        </div>
+
+                        <!-- Dampak -->
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-sm text-slate-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-triangle-exclamation text-amber-500"></i> Bahaya & Dampak Buruk:
+                            </h4>
+                            <ul class="space-y-2 text-xs text-slate-600">
+                                ${data.dampak.map(d => `<li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-100"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i> <span>${d}</span></li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: 4 Benefit Levels -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 space-y-4">
+                    <h4 class="font-bold text-slate-800 text-base flex items-center gap-2 border-b border-slate-100 pb-3">
+                        <i class="fa-solid fa-shield-heart text-emerald-600"></i>
+                        4 Manfaat Menghindari (TP 2)
+                    </h4>
+
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 rounded-lg bg-emerald-50 border border-emerald-100">
+                            <span class="font-bold text-emerald-900 block mb-1"><i class="fa-solid fa-user text-emerald-600 mr-1"></i> Bagi Diri Sendiri:</span>
+                            <p class="text-slate-600">${data.manfaat.pribadi}</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-blue-50 border border-blue-100">
+                            <span class="font-bold text-blue-900 block mb-1"><i class="fa-solid fa-house-chimney text-blue-600 mr-1"></i> Bagi Keluarga:</span>
+                            <p class="text-slate-600">${data.manfaat.keluarga}</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-indigo-50 border border-indigo-100">
+                            <span class="font-bold text-indigo-900 block mb-1"><i class="fa-solid fa-school text-indigo-600 mr-1"></i> Bagi Sekolah:</span>
+                            <p class="text-slate-600">${data.manfaat.sekolah}</p>
+                        </div>
+                        <div class="p-3 rounded-lg bg-amber-50 border border-amber-100">
+                            <span class="font-bold text-amber-900 block mb-1"><i class="fa-solid fa-users text-amber-600 mr-1"></i> Bagi Masyarakat:</span>
+                            <p class="text-slate-600">${data.manfaat.masyarakat}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkCaseResponse(caseNum, option, isCorrect) {
+            const feedbackEl = document.getElementById(`case-feedback-${caseNum}`);
+            feedbackEl.classList.remove('hidden', 'bg-green-100', 'text-green-800', 'bg-red-100', 'text-red-800');
+            
+            if(isCorrect) {
+                feedbackEl.classList.add('bg-emerald-100', 'text-emerald-900');
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check mr-1 text-emerald-600"></i> <b>Tepat Sekali!</b> Tindakan ini mencerminkan keberanian moral (Syaja'ah) dan kepedulian sosial sesuai dengan prinsip Rahmatan lil 'Alamin.`;
+            } else {
+                feedbackEl.classList.add('bg-red-100', 'text-red-900');
+                feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1 text-red-600"></i> <b>Kurang Tepat.</b> Sikap acuh atau membalas ejekan/mencoba zat berbahaya justru akan memperluas dampak penyakit sosial.`;
+            }
+        }
+
+        // Campaign Live Preview Handler
+        function updatePosterPreview() {
+            document.getElementById('prev-topic').innerText = document.getElementById('camp-topic').value.toUpperCase();
+            document.getElementById('prev-title').innerText = document.getElementById('camp-title').value || "Judul Kampanye";
+            document.getElementById('prev-dalil').innerText = document.getElementById('camp-dalil').value;
+            document.getElementById('prev-benefits').innerText = document.getElementById('camp-benefits').value || "- Manfaat kampanye akan tampil di sini";
+            document.getElementById('prev-cta').innerText = document.getElementById('camp-cta').value || "Mari Bergabung!";
+        }
+
+        function setPosterTheme(color) {
+            const card = document.getElementById('poster-card');
+            card.className = "w-full max-w-sm text-white p-6 rounded-2xl shadow-xl space-y-4 border border-white/20 transition-all duration-300 ";
+            if(color === 'emerald') card.classList.add('bg-gradient-to-br', 'from-emerald-800', 'to-teal-900');
+            if(color === 'teal') card.classList.add('bg-gradient-to-br', 'from-teal-800', 'to-cyan-900');
+            if(color === 'indigo') card.classList.add('bg-gradient-to-br', 'from-indigo-900', 'to-purple-900');
+            if(color === 'rose') card.classList.add('bg-gradient-to-br', 'from-rose-800', 'to-red-900');
+        }
+
+        // Quiz Renderer
+        function renderQuiz() {
+            const container = document.getElementById('quiz-body');
+            container.innerHTML = quizQuestions.map((q, idx) => `
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-3">
+                    <p class="font-bold text-slate-800 text-sm">${q.q}</p>
+                    <div class="space-y-2">
+                        ${q.options.map((opt, oIdx) => `
+                            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 bg-white cursor-pointer hover:border-emerald-500 text-xs text-slate-700 transition">
+                                <input type="radio" name="q-${idx}" value="${oIdx}" class="text-emerald-600 focus:ring-emerald-500">
+                                <span>${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div id="q-explain-${idx}" class="hidden p-3 rounded-lg text-xs mt-2 bg-emerald-50 text-emerald-900 border border-emerald-200">
+                        <b>Penjelasan:</b> ${q.explain}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            quizQuestions.forEach((q, idx) => {
+                const selected = document.querySelector(`input[name="q-${idx}"]:checked`);
+                const explainEl = document.getElementById(`q-explain-${idx}`);
+                explainEl.classList.remove('hidden');
+
+                if(selected && parseInt(selected.value) === q.correct) {
+                    score += 20;
+                }
+            });
+
+            document.getElementById('quiz-score').innerText = score;
+            document.getElementById('quiz-score-badge').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        window.addEventListener('DOMContentLoaded', () => {
+            selectTopic('bullying');
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>
+```eof
+
+### Ringkasan Aplikasi Pembelajaran Interaktif
+Materi interaktif berbasis web ini disusun sesuai dengan **RPP PAI & Budi Pekerti Kelas XI (Bab 3)** karya *Alwi Mushthofa, S.Pd.I., M.Pd.* dari SMAN 1 Depok:
+
+1. **Eksplorasi Ahli (Jigsaw Model)**: Menyajikan 4 kelompok bahasan (Bullying, Perkelahian, Khamr, Narkoba) yang dilengkapi dengan teks Arab, terjemahan dalil Al-Qur'an/Hadis, dampak buruk, serta 4 tingkatan manfaat pencegahan (D
